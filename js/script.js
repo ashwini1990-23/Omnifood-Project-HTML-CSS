@@ -28,7 +28,7 @@ btnNavEl.addEventListener("click", function () {
 ///////////////////////////////////////////////////////////
 // Smooth scrolling animation
 const allLinks = document.querySelectorAll("a:link");
-console.log(allLinks);
+console.log("All links: ", allLinks);
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -42,13 +42,46 @@ allLinks.forEach(function (link) {
         behavior: "smooth",
       });
 
+    // Scroll to other links
     if (href !== "#" && href.startsWith("#")) console.log(href);
     {
       const sectionEl = document.querySelector(href);
-      console.log(sectionEl);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
     }
+
+    // Close mobile navigation
+    if (link.classList.contains("main-nav-link"))
+      headerEl.classList.toggle("nav-open");
   });
 });
+
+///////////////////////////////////////////////////////////
+// Sticky navigation
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+    if (ent.isIntersecting === false) {
+      // or if(!ent.isIntersecting)
+      document.body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting) {
+      // or if(ent.isIntersecting === true)
+      //if(!ent.isIntersecting)
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+obs.observe(sectionHeroEl);
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
