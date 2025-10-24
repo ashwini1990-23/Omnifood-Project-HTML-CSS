@@ -30,34 +30,11 @@ With the Omnifood platform, users can:
 
 ## 🛠️ Technologies Used
 
-| Category             | Tools/Technologies |
-|-------------------   -------------------|
-| **Frontend**         | HTML5, CSS3, JavaScript (ES6+) |
-| **Design**           | Flexbox, CSS Grid, Animations, Responsive Layout |
-| **Version Control**  | Git & GitHub |
-| **Deployment**       | Netlify |
-| **Additional Tools** | Google Fonts, Font Awesome |
-
----
-
-## 📂 Folder Structure
-
-Omnifood-Project-HTML-CSS/
-│
-├── index.html
-├── css/
-│ ├── style.css
-│ └── queries.css
-| └── general.css
-├── js/
-│ └── script.js
-├── img/
-│ ├── app/
-│ ├── meals/
-│ └── logos/
-| └── ...
-└── README.md
-
+ **Frontend**         | HTML5, CSS3, JavaScript (ES6+) 
+ **Design**           | Flexbox, CSS Grid, Animations, Responsive Layout 
+ **Version Control**  | Git & GitHub 
+ **Deployment**       | Netlify 
+ **Additional Tools** | Google Fonts, Font Awesome 
 
 ---
 
